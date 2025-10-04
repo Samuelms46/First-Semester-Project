@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Stopwatch Work</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="light">
+    <div id="main-content" style="display: block">
+      <!-- Header -->
+      <div class="head">
+        <h1 class="header">My Stopwatch Work</h1>
+        <h2 class="sub-header">by Samuel Muwanguzi</h2>
+        <button id="theme-toggle" class="btn2 theme">Dark</button>
+      </div>
+
+      <!-- Stopwatch -->
+      <div class="stopwatch">
+        <div class="time" id="time">00:00:00.00</div>
+
+        <!-- Controls -->
+        <div class="controls">
+          <button id="lap" class="btn left" disabled>Lap</button>
+          <button id="start" class="btn right">Start</button>
+        </div>
+
+        <!-- Laps + Stats -->
+        <div class="laps-container">
+          <div class="laps">
+            <table>
+              <thead>
+                <tr>
+                  <th>Lap</th>
+                  <th>Split</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody id="laps"></tbody>
+            </table>
+          </div>
+          <div class="lap-stats" id="lap-stats"></div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="credits">
+        <p>Made by Samuel Muwanguzi - ALT/SOE/025/4488</p>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

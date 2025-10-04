@@ -1,0 +1,248 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 1.6s ease, color 1.6s ease;
+}
+
+.header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 1.4rem;
+  font-weight: 1600;
+}
+
+.sub-header {
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #666;
+}
+
+/* Theme toggle button */
+.btn2.theme {
+  position: absolute;
+  color: rgb(13, 0, 128);
+  border-color: rgb(13, 0, 128);
+}
+.theme-toggle:hover {
+  transform: scale(1.05);
+}
+
+/* Stopwatch container */
+.stopwatch {
+  width: 360px;
+  text-align: center;
+}
+
+.time {
+  padding-top: 5px;
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.btn {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid;
+  background: transparent;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.btn2 {
+  top: 17px;
+  right: 17px;
+  background: none;
+  border: 3px solid;
+  border-radius: 20px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.2s;
+  margin-top: 4px;
+}
+
+/* Hover + active effects */
+.btn:hover {
+  transform: scale(1.05);
+}
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn2:hover {
+  transform: scale(1.05);
+}
+.btn2:active {
+  transform: scale(0.95);
+}
+
+/* Left button (Lap/Reset) */
+.btn.left {
+  border-color: #666;
+  color: #666;
+}
+.btn.left:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Right button (Start/Stop/Resume) */
+.btn.right {
+  border-color: rgb(13, 0, 128);
+  color: white;
+  background: linear-gradient(
+    45deg,
+    rgb(13, 0, 128),
+    rgb(0, 123, 255)
+  ); /* Gradient */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.btn.right:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Lap table */
+.laps {
+  max-height: 250px;
+  overflow-y: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+/* Sticky header */
+thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  font-weight: 600;
+  border-bottom: 1px solid;
+  transition: background 1.6s ease, color 1.6s ease, border-color 1.6s ease;
+}
+
+/* Light mode */
+body.light {
+  background: #fff;
+  color: #000;
+}
+body.light thead th {
+  background: #fff;
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+body.light .btn.left {
+  border-color: #555;
+  color: #555;
+}
+
+/* Dark mode */
+body.dark {
+  background: #000;
+  color: #fff;
+}
+body.dark thead th {
+  background: #000;
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+body.dark .btn.left {
+  border-color: #888;
+  color: #888;
+}
+
+/* Lap highlights */
+.lap-fastest {
+  color: #0f0;
+}
+.lap-slowest {
+  color: #f33;
+}
+.lap-normal {
+  color: #888;
+}
+
+/* Lap animation */
+.lap-row {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+.lap-row.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Footer credits */
+p {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 10px;
+}
+
+footer.credits {
+  position: fixed;
+  bottom: 10px;
+  right: 15px;
+  font-size: 0.8rem;
+  opacity: 0.6;
+  text-align: center;
+  transition: color 1.6s ease, opacity 1.3s ease;
+}
+
+footer.credits:hover {
+  opacity: 1;
+}
+
+/* Lap Stats */
+.lap-stats {
+  font-size: 0.9rem;
+  margin-top: 8px;
+  opacity: 0.8;
+}
+
+/* Rounded Lap Rows */
+.lap-row {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Auto-scroll area */
+.laps {
+  max-height: 200px;
+  overflow-y: auto;
+}
